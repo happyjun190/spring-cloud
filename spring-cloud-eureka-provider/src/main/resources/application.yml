@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: provider-service
+server:
+  port: 8760
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer2:8757/eureka/,http://peer1:8758/eureka/,http://peer0:8759/eureka/
+  instance:
+    prefer-ip-address: true
