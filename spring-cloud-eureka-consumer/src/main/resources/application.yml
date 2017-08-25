@@ -7,3 +7,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://peer2:8757/eureka/,http://peer1:8758/eureka/,http://peer0:8759/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000 # 请求超时时长，缺省为1000
+  threadpool:
+    default:
+      coreSize: 20 # 请求最大线程数，缺省为10

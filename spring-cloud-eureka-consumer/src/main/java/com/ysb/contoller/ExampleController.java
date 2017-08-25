@@ -17,15 +17,14 @@ public class ExampleController {
     @Autowired
     private IExampleService exampleService;
 
-    @RequestMapping("/example")
+    @RequestMapping("/example/example")
     String home() {
         return "hello world";
     }
 
 
-    @GetMapping("/getExampleValueById")
+    @GetMapping("/example/getExampleValueById")
     public String getExampleValueById(@RequestParam(value = "id") Integer id) {
-        logger.info("Ribbon 负载均衡:{}", id);
         return exampleService.getExampleValueById(id);
     }
 
